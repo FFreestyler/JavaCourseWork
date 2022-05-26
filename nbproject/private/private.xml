@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/Рухид/Downloads/Spring%20Web%20MVC%20CanvasJS%20Chart%20Samples/WebContent/WEB-INF/jsp/header.jsp</file>
+            <file>file:/C:/Users/Рухид/Downloads/Spring%20Web%20MVC%20CanvasJS%20Chart%20Samples/WebContent/WEB-INF/jsp/footer.jsp</file>
+            <file>file:/C:/Users/Рухид/Downloads/Spring%20Web%20MVC%20CanvasJS%20Chart%20Samples/src/beans.xml</file>
+            <file>file:/C:/Users/Рухид/Downloads/Spring%20Web%20MVC%20CanvasJS%20Chart%20Samples/WebContent/WEB-INF/jsp/index.jsp</file>
+            <file>file:/C:/Users/Рухид/Downloads/Spring%20Web%20MVC%20CanvasJS%20Chart%20Samples/src/com/canvasjs/services/RestfullDataPointsService.java</file>
+            <file>file:/C:/Users/Рухид/Downloads/Spring%20Web%20MVC%20CanvasJS%20Chart%20Samples/src/com/canvasjs/dao/DataPointsDAO.java</file>
+            <file>file:/C:/Users/Рухид/Downloads/Spring%20Web%20MVC%20CanvasJS%20Chart%20Samples/WebContent/WEB-INF/jsp/ChartTypes/Line2.jsp</file>
+            <file>file:/C:/Users/Рухид/Downloads/Spring%20Web%20MVC%20CanvasJS%20Chart%20Samples/src/com/canvasjs/controllers/HomeController.java</file>
+            <file>file:/C:/Users/Рухид/Downloads/Spring%20Web%20MVC%20CanvasJS%20Chart%20Samples/src/com/canvasjs/controllers/ChartTypesController.java</file>
+            <file>file:/C:/Users/Рухид/Downloads/Spring%20Web%20MVC%20CanvasJS%20Chart%20Samples/src/com/canvasjs/model/DataPointsModel.java</file>
+            <file>file:/C:/Users/Рухид/Downloads/Spring%20Web%20MVC%20CanvasJS%20Chart%20Samples/src/com/canvasjs/controllers/JstlView.java</file>
+            <file>file:/C:/Users/Рухид/Downloads/Spring%20Web%20MVC%20CanvasJS%20Chart%20Samples/src/com/canvasjs/controllers/RestController.java</file>
+            <file>file:/C:/Users/Рухид/Downloads/Spring%20Web%20MVC%20CanvasJS%20Chart%20Samples/src/com/canvasjs/controllers/HowToController.java</file>
+            <file>file:/C:/Users/Рухид/Downloads/Spring%20Web%20MVC%20CanvasJS%20Chart%20Samples/src/com/canvasjs/services/DataPointsMapper.java</file>
+            <file>file:/C:/Users/Рухид/Downloads/Spring%20Web%20MVC%20CanvasJS%20Chart%20Samples/src/com/canvasjs/dao/DataPointsDAOImpl.java</file>
+            <file>file:/C:/Users/Рухид/Downloads/Spring%20Web%20MVC%20CanvasJS%20Chart%20Samples/WebContent/WEB-INF/jsp/ChartTypes/Line1.jsp</file>
+            <file>file:/C:/Users/Рухид/Downloads/Spring%20Web%20MVC%20CanvasJS%20Chart%20Samples/WebContent/WEB-INF/jsp/ChartTypes/Line3.jsp</file>
+            <file>file:/C:/Users/Рухид/Downloads/Spring%20Web%20MVC%20CanvasJS%20Chart%20Samples/WebContent/WEB-INF/jsp/sidebar.jsp</file>
+            <file>file:/C:/Users/Рухид/Downloads/Spring%20Web%20MVC%20CanvasJS%20Chart%20Samples/WebContent/WEB-INF/jsp/template.jsp</file>
+        </group>
+    </open-files>
+</project-private>
