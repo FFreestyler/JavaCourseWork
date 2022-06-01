@@ -8,16 +8,44 @@ import java.sql.Statement;
 
 public class DataBase {
 
-  Connection conn = null;
+  private static final String URL = "jdbc:postgresql://winhost:5432/database";
+  private static final String USERNAME = "postgres";
+  private static final String PASSWORD = "postgre";
 
-  public void pushRecords(Double CPUUsage, Double MEMUsage, String DISKUsage) {
+  private static Connection conn = null;
+
+  static {
+    try {
+      Class.forName("org.postgresql.Driver");
+    } catch (ClassNotFoundException e) {
+      e.printStackTrace();
+    }
+
+    try {
+      conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+      System.out.println("Connection to SQLite has been established.");
+    } catch (SQLException e) {
+      e.printStackTrace();
+    }
+  }
+
+  public void pushRecords(Double CPUUsage, Double MEMUsage, double DISKUsage) {
     String sql = "INSERT INTO usage(cpu,mem,disk) VALUES(?,?,?)";
 
     try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
       pstmt.setDouble(1, CPUUsage);
       pstmt.setDouble(2, MEMUsage);
-      pstmt.setString(3, DISKUsage);
+      pstmt.setDouble(3, DISKUsage);
       pstmt.executeUpdate();
+    } catch (SQLException e) {
+      System.out.println(e.getMessage());
+    }
+  }
+
+  public void dropTable() {
+    try (Statement stmt = conn.createStatement()) {
+      String sql = "DROP TABLE IF EXISTS usage";
+      stmt.execute(sql);
     } catch (SQLException e) {
       System.out.println(e.getMessage());
     }
@@ -26,10 +54,10 @@ public class DataBase {
   public void createNewTable() {
     String sql =
       "CREATE TABLE IF NOT EXISTS usage (\n" +
-      "	id integer PRIMARY KEY,\n" +
+      "	id SERIAL PRIMARY KEY,\n" +
       "	cpu real,\n" +
       "	mem real,\n" +
-      "	disk text\n" +
+      "	disk real\n" +
       ");";
 
     try (Statement stmt = conn.createStatement()) {
@@ -39,18 +67,7 @@ public class DataBase {
     }
   }
 
-  public void connect() {
-    try {
-      String url = "jdbc:sqlite:database.db";
-      conn = DriverManager.getConnection(url);
-
-      System.out.println("Connection to SQLite has been established.");
-    } catch (SQLException e) {
-      System.out.println(e.getMessage());
-    } finally {
-      if (conn != null) {
-        //conn.close();
-      }
-    }
+  public void close() throws SQLException {
+    conn.close();
   }
 }

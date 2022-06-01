@@ -40,7 +40,7 @@ public class App {
   public static void main(String args[])
     throws IOException, InterruptedException {
     DataBase db = new DataBase();
-    db.connect();
+    db.dropTable();
     db.createNewTable();
     ConsoleReader rc = new ConsoleReader(flag);
     Runnable r = rc;
@@ -49,10 +49,10 @@ public class App {
     while (rc.getFlag()) {
       double mem = parseUsage("mem");
       double cpu = parseUsage("cpu");
-      String disk = parseTotalDiskUsage(
+      Double disk = parseTotalDiskUsage(
         "df -h --total | grep total | awk '{print $5}'"
       );
-      db.pushRecords(mem, cpu, disk);
+      db.pushRecords(cpu, mem, disk);
       Thread.sleep(1000);
     }
     t.join();
@@ -82,7 +82,7 @@ public class App {
     return num > 100 ? 100 : num;
   }
 
-  public static String parseTotalDiskUsage(final String command)
+  public static Double parseTotalDiskUsage(final String command)
     throws IOException {
     ProcessBuilder pb = new ProcessBuilder("bash", "-c", command);
     pb.redirectError();
@@ -92,7 +92,10 @@ public class App {
     );
     String s;
     s = bf.readLine();
-
-    return s;
+    String value = "";
+    for (int i = 0; i < s.length(); i++) {
+      if (s.charAt(i) != '%') value += s.charAt(i);
+    }
+    return Double.parseDouble(value);
   }
 }
